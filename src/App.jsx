@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 function App() {
-  
+  let [showContent, setShowContent]=useState(false);
 
   useGSAP(() => {
     const tl= gsap.timeline();
@@ -20,6 +20,13 @@ function App() {
       ease: "Expo.easeInOut",
       transformOrigin: "50% 50%",
       opacity: 0,
+      onUpdate: function(){
+        if(this.progress() >= .9){
+          document.querySelector(".svg").remove();
+          setShowContent(true);
+          this.kill();
+        }
+      }
 
     })
   })
