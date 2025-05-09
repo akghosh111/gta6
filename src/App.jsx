@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import 'remixicon/fonts/remixicon.css';
 
 function App() {
   let [showContent, setShowContent]=useState(false);
@@ -77,10 +78,25 @@ function App() {
                 <h3 className="text-4xl text-white -mt-[8px] leading-none">Rockstar</h3>
               </div>
             </div>
+            
             <div className="imagesdiv relative overflow-hidden w-full h-screen">
               <img src="./sky.png" className="absolute top-0 left-0 w-full h-full object-cover" alt="sky image" />
               <img src="./bg.png" className="absolute top-0 left-0 w-full h-full object-cover" alt="background" />
-              <img src="./girlbg.png" className="absolute bottom-[-52%] left-1/2 -translate-x-1/2 scale-[0.9]" alt="girl" />
+              <div className="text text-white flex flex-col gap-3 absolute top-0 left-1/2 -translate-x-1/2">
+                <h1 className="text-[12rem] leading-none -ml-40">grand</h1>
+                <h1 className="text-[12rem] leading-none ml-20">theft</h1>
+                <h1 className="text-[12rem] leading-none -ml-20">auto</h1>
+              </div>
+              <img src="./girlbg.png" className="absolute bottom-[-52%] left-1/2 -translate-x-1/2 scale-[0.8]" alt="girl" />
+
+            
+            </div>
+            <div className="btmbar text-white absolute bottom-0 left-0 w-full py-15 px-10 bg-gradient-to-t from-black to-transparent">
+              <div className="flex gap-4 items-center">
+                <i class="text-4xl ri-arrow-down-line"></i>
+                <h3 className="text-xl font-[Helvetica_Now_Display]">Scroll Down</h3>
+              </div>
+              <img src="./ps5.png" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[65px]" alt="" />
             </div>
           </div>
 
