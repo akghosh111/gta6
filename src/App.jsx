@@ -33,6 +33,42 @@ function App() {
   });
 
   useGSAP(() =>{
+
+    if (!showContent) return;
+
+    gsap.to(".main", {
+      scale: 1,
+      rotate: 0,
+      delay: "-1",
+      duration: 2,
+      ease: "Expo.easeInOut"
+    })
+
+    gsap.to(".sky", {
+      scale: 1,
+      rotate: 0,
+      delay: "-.8",
+      duration: 2,
+      ease: "Expo.easeInOut"
+    })
+
+    gsap.to(".bg", {
+      scale: 1,
+      rotate: 0,
+      delay: "-.8",
+      duration: 2,
+      ease: "Expo.easeInOut"
+    })
+
+    gsap.to(".character", {
+      scale: 0.7,
+      x: "50%",
+      bottom: "-52%",
+      rotate: 0,
+      delay: "-.8",
+      duration: 2,
+      ease: "Expo.easeInOut"
+    })
     const main = document.querySelector(".main");
 
     main?.addEventListener("mousemove", function(e){
@@ -84,7 +120,7 @@ function App() {
         </svg>
       </div>
       {showContent && 
-        <div className="main w-full">
+        <div className="main w-full rotate-[-10deg] scale-[1.7]">
           <div className="landing w-full h-screen bg-black">
             <div className="navbar absolute top-0 left-0 z-[10] w-full py-10 px-10">
               <div className="logo flex gap-7">
@@ -98,14 +134,14 @@ function App() {
             </div>
             
             <div className="imagesdiv relative overflow-hidden w-full h-screen">
-              <img src="./sky.png" className="absolute sky scale-[1.2] top-0 left-0 w-full h-full object-cover" alt="sky image" />
-              <img src="./bg.png" className="absolute bg scale-[1.1] top-0 left-0 w-full h-full object-cover" alt="background" />
+              <img src="./sky.png" className="absolute sky scale-[1.5] rotate-[-20deg] top-0 left-0 w-full h-full object-cover" alt="sky image" />
+              <img src="./bg.png" className="absolute bg scale-[1.8] rotate-[-3deg] top-0 left-0 w-full h-full object-cover" alt="background" />
               <div className="text text-white flex flex-col gap-3 absolute top-10 left-1/2 -translate-x-1/2">
                 <h1 className="text-[12rem] leading-none -ml-40">grand</h1>
                 <h1 className="text-[12rem] leading-none ml-20">theft</h1>
                 <h1 className="text-[12rem] leading-none -ml-20">auto</h1>
               </div>
-              <img src="./girlbg.png" className="absolute character bottom-[-52%] left-1/2 -translate-x-1/2 scale-[0.8]" alt="girl" />
+              <img src="./girlbg.png" className="absolute character rotation-[-10deg] bottom-[-70%]  scale-[0.5]" alt="girl" />
 
             
             </div>
@@ -118,17 +154,18 @@ function App() {
             </div>
           </div>
 
-          <div className="w-full h-screen flex items-center justify-center px-10 bg-black overflow-hidden">
+          <div className="w-full  flex items-center justify-center px-10 bg-black overflow-hidden">
             <div className="cntnr flex items-center text-white w-full h-[50%]">
-              <div className="limg relative w-1/2 h-full">
-                <img className="absolute scale-[1.1] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="./imag.png" alt="" />
+              <div className="limg relative w-1/2 h-auto">
+                <img className="absolute scale-[1.1]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="./imag.png" alt="" />
               </div>
-              <div className="rg w-[30%]">
-                <h1 className="text-6xl">Still Running</h1>
-                <h1 className="text-6xl">Not Hunting</h1>
-                <p className="mt-10 font-[Helvetica_Now_Display] text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas cum quia pariatur dolores maiores autem molestias eligendi consequatur impedit. Pariatur perferendis perspiciatis iure id quo nihil aliquam sequi culpa!</p>
-                <p className="mt-3 font-[Helvetica_Now_Display] text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatibus qui dolorum ratione blanditiis magnam deserunt libero, repudiandae facilis quos? Odio quo incidunt iste veritatis quidem ducimus nam amet cupiditate?</p>
-                <p className="mt-10 font-[Helvetica_Now_Display] text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptas cum quia pariatur dolores maiores autem molestias eligendi consequatur impedit. Pariatur perferendis perspiciatis iure id quo nihil aliquam sequi culpa!</p>
+              <div className="rg w-[30%] py-30">
+                <h1 className="text-5xl">Still Running</h1>
+                <h1 className="text-5xl">Not Hunting</h1>
+                <p className="mt-10 font-[Helvetica_Now_Display] text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, omnis molestiae, impedit magnam nesciunt at dolores odit quasi rem suscipit necessitatibus et eum voluptas, laboriosam obcaecati veniam laudantium tempore molestias.</p>
+                <p className="mt-10 font-[Helvetica_Now_Display] text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dignissimos dolore saepe voluptate eveniet nihil at molestias iste rem quam, deserunt dolorem mollitia repudiandae impedit molestiae facere porro cum! Numquam.</p>
+
+                <button className="bg-yellow-500 mt-10 px-10 py-10 text-black text-3xl mb-10">Download now</button>
               </div>
             </div>
             
