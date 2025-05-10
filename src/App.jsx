@@ -45,7 +45,7 @@ function App() {
     })
 
     gsap.to(".sky", {
-      scale: 1,
+      scale: 1.1,
       rotate: 0,
       delay: "-.8",
       duration: 2,
@@ -53,7 +53,7 @@ function App() {
     })
 
     gsap.to(".bg", {
-      scale: 1,
+      scale: 1.1,
       rotate: 0,
       delay: "-.8",
       duration: 2,
@@ -62,12 +62,20 @@ function App() {
 
     gsap.to(".character", {
       scale: 0.7,
-      x: "50%",
+      x: "-50%",
       bottom: "-52%",
       rotate: 0,
-      delay: "-.8",
       duration: 2,
-      ease: "Expo.easeInOut"
+      delay: "-0.8",
+      ease: "Expo.easeInOut",
+    })
+
+    gsap.to(".text", {
+      scale: 1,
+      rotate: 0,
+      duration: 2,
+      delay: "-0.8",
+      ease: "Expo.easeInOut",
     })
     const main = document.querySelector(".main");
 
@@ -121,7 +129,7 @@ function App() {
       </div>
       {showContent && 
         <div className="main w-full rotate-[-10deg] scale-[1.7]">
-          <div className="landing w-full h-screen bg-black">
+          <div className="landing overflow-hidden relative w-full h-screen bg-black">
             <div className="navbar absolute top-0 left-0 z-[10] w-full py-10 px-10">
               <div className="logo flex gap-7">
                 <div className="lines flex flex-col gap-[5px]">
@@ -136,12 +144,12 @@ function App() {
             <div className="imagesdiv relative overflow-hidden w-full h-screen">
               <img src="./sky.png" className="absolute sky scale-[1.5] rotate-[-20deg] top-0 left-0 w-full h-full object-cover" alt="sky image" />
               <img src="./bg.png" className="absolute bg scale-[1.8] rotate-[-3deg] top-0 left-0 w-full h-full object-cover" alt="background" />
-              <div className="text text-white flex flex-col gap-3 absolute top-10 left-1/2 -translate-x-1/2">
-                <h1 className="text-[12rem] leading-none -ml-40">grand</h1>
-                <h1 className="text-[12rem] leading-none ml-20">theft</h1>
-                <h1 className="text-[12rem] leading-none -ml-20">auto</h1>
+              <div className="text text-white flex flex-col gap-3 absolute top-10 left-1/2 -translate-x-1/2 scale-[1.4] rotate-[-10deg]">
+                <h1 className="text-[10rem] leading-none -ml-40">grand</h1>
+                <h1 className="text-[10rem] leading-none ml-20">theft</h1>
+                <h1 className="text-[10rem] leading-none -ml-20">auto</h1>
               </div>
-              <img src="./girlbg.png" className="absolute character rotation-[-10deg] bottom-[-70%]  scale-[0.5]" alt="girl" />
+              <img src="./girlbg.png" className="absolute character -bottom-[150%] left-1/2 -translate-x-1/2  scale-[3] rotate-[-20deg]" alt="girl" />
 
             
             </div>
